@@ -20,3 +20,17 @@ input,select,textarea{min-height:38px}label{display:inline-block;margin:3px}
 @media(prefers-contrast:more){button.alt{border:2px solid #2b2d7e}}
 .badge{font-size:11px;padding:2px 8px;border-radius:10px;background:#e8ebf5;white-space:nowrap}.badge.nerdc{background:#d1fae5;color:#065f46}.badge.school{background:#fef3c7;color:#92400e}
 .warn{background:#fff7ed;border:2px solid #f59e0b}
+
+/* Responsive header, tabs and cards */
+.brand{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.25}.brand b{flex:none;font-size:18px}.brand small{opacity:.85;text-transform:capitalize}
+.user{display:flex;align-items:center;gap:12px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:16px}
+.card{overflow-x:auto}
+@media(max-width:640px){
+ header{flex-wrap:wrap;padding:10px 14px;gap:8px 12px}header img{height:38px}.brand b{font-size:16px}
+ .user{width:100%;justify-content:space-between;border-top:1px solid #ffffff33;padding-top:8px;font-size:14px}
+ .user button{min-height:34px;padding:6px 14px}
+ nav{flex-wrap:nowrap;overflow-x:auto;padding:10px 14px;gap:6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+ nav::-webkit-scrollbar{display:none}nav button{flex:0 0 auto;white-space:nowrap}
+ main{padding:14px}h2{font-size:22px;margin:8px 0 14px}.stats{grid-template-columns:1fr 1fr;gap:10px}
+}

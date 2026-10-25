@@ -6,7 +6,7 @@ const TABS={admin:['Overview','Students','Curriculum','Staff','Attendance','Assi
 export default function Dash(){const [u,setU]=useState(null);const [t,setT]=useState('');
  useEffect(()=>{api('/api/auth').then(d=>{if(!d.user){location.href='/';return}setU(d.user);setT(TABS[d.user.role][0])})},[]);
  if(!u)return null;const V={Overview,Children,Fees,Curriculum,Announcements,Students,Staff,Attendance:Clock,Clock,Assignments,Grades,Approvals,Results:ParentResults,Alerts}[t];
- return <><header><img src="/logo.png" alt=""/><b>High Flyers Academy — {u.role}</b><span>{u.name}</span>
-  <button className="alt" onClick={async()=>{await api('/api/auth','DELETE');location.href='/'}}>Logout</button></header>
+ return <><header><img src="/logo.png" alt="High Flyers Academy logo"/><div className="brand"><b>High Flyers Academy</b><small>{u.role} portal</small></div>
+  <div className="user"><span>{u.name}</span><button className="alt" onClick={async()=>{await api('/api/auth','DELETE');location.href='/'}}>Logout</button></div></header>
   <nav>{TABS[u.role].map(x=><button key={x} aria-current={x===t} className={x===t?'on':'alt'} onClick={()=>setT(x)}>{x}</button>)}</nav>
   <main id="main">{V&&<V user={u}/>}</main></>}
