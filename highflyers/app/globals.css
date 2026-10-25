@@ -1,0 +1,22 @@
+:root{--navy:#2b2d7e;--red:#e11d1d}*{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:#f4f6fb;color:#1c1e33}
+header{background:var(--navy);color:#fff;display:flex;align-items:center;gap:12px;padding:10px 20px}header img{height:44px;background:#fff;border-radius:8px}header b{flex:1}
+nav{display:flex;gap:6px;flex-wrap:wrap;padding:12px 20px;background:#fff;border-bottom:3px solid var(--red)}
+button{background:var(--navy);color:#fff;border:0;border-radius:8px;padding:8px 14px;cursor:pointer}button:disabled{opacity:.5}button.alt{background:#e8ebf5;color:var(--navy)}button.on{background:var(--red)}
+main{padding:20px;max-width:1000px;margin:auto}.card{background:#fff;border-radius:12px;padding:16px;margin-bottom:16px;box-shadow:0 1px 4px #0001}
+input,select,textarea{padding:8px;border:1px solid #ccd;border-radius:8px;margin:3px;font:inherit}table{width:100%;border-collapse:collapse}td,th{padding:8px;border-bottom:1px solid #eee;text-align:left}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}.stu{text-align:center}.stu img,.ph{width:80px;height:80px;border-radius:50%;object-fit:cover;background:#dde}
+.row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}.err{color:var(--red)}
+.ok{color:green}
+:focus-visible{outline:3px solid #f59e0b;outline-offset:2px}
+button{min-height:40px;transition:background .15s,transform .1s}button:hover{filter:brightness(1.18)}button:active{transform:scale(.97)}
+button.on{box-shadow:inset 0 -3px 0 #fff9}
+[data-clicked]{outline:3px solid #f59e0b!important;background:#0b7f77!important;color:#fff!important;transform:scale(.97)}
+a{color:#2b2d7e}a:visited{color:#6b21a8}
+input,select,textarea{min-height:38px}label{display:inline-block;margin:3px}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:#fff;padding:8px;z-index:99}
+.loader{position:fixed;inset:0;display:grid;place-items:center;background:#ffffff66;z-index:99;pointer-events:none}
+@keyframes spx{to{transform:rotate(360deg)}}.spin{width:84px;height:84px;border:9px solid #d6dbee;border-top-color:#e11d1d;border-right-color:#2b2d7e;border-radius:50%;animation:spx .8s linear infinite}@keyframes sp{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}}
+@media(prefers-contrast:more){button.alt{border:2px solid #2b2d7e}}
+.badge{font-size:11px;padding:2px 8px;border-radius:10px;background:#e8ebf5;white-space:nowrap}.badge.nerdc{background:#d1fae5;color:#065f46}.badge.school{background:#fef3c7;color:#92400e}
+.warn{background:#fff7ed;border:2px solid #f59e0b}
