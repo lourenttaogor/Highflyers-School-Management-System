@@ -3,7 +3,7 @@ const {Schema,models,model}=mongoose;const OID=Schema.Types.ObjectId;
 const M=(n,s)=>models[n]||model(n,new Schema(s,{timestamps:true}));
 export const User=M('User',{name:String,email:{type:String,unique:true,lowercase:true,trim:true},phone:String,password:String,role:{type:String,enum:['admin','teacher','parent']},children:[OID]});
 export const Student=M('Student',{fullName:String,examNo:{type:String,unique:true},age:Number,gender:String,className:String,photo:String,admissionSession:String,language:String,religion:String,trade:String});
-export const Attendance=M('Attendance',{staff:{type:OID,ref:'User'},date:String,clockIn:Date,clockOut:Date,by:{type:OID,ref:'User'}});
+export const Attendance=M('Attendance',{staff:{type:OID,ref:'User'},date:String,clockIn:Date,clockOut:Date,by:{type:OID,ref:'User'},outBy:{type:OID,ref:'User'},inLoc:Object,outLoc:Object,log:[Object]});
 export const Assignment=M('Assignment',{className:String,subject:String,title:String,description:String,dueDate:String,by:String});
 export const Result=M('Result',{student:{type:OID,ref:'Student'},term:String,session:String,className:String,level:String,status:{type:String,default:'draft'},
  scores:[{subject:String,ca:Number,project:Number,exam:Number,total:Number,max:{ca:Number,project:Number,exam:Number}}],affective:Object,psycho:Object,
